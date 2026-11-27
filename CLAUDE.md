@@ -6,8 +6,11 @@
 - No build step: files are opened or served exactly as written.
 
 ## Project Structure
-The project is nearly empty for now. Everything lives at the top level:
 - `CLAUDE.md`: these instructions.
+- `index.html`: portal homepage with one card per tool.
+- `css/style.css`: shared styles and the light/dark colours.
+- `js/theme.js`: light/dark toggle (remembers the choice).
+- `tools/solder-checker/`: the Solder Joint Checker (`index.html`, `checker.js`).
 
 Update this section as files and folders are added.
 
@@ -27,11 +30,11 @@ A portal of small electronics engineering tools for teachers and students.
 - **Adding a tool later:** create `tools/<tool-name>/` with its own `index.html` and script, then add its card to the homepage.
 
 ### Phase 1: portal + Solder Joint Checker
-- Shared base: layout, styles, light/dark toggle (light by default), readable contrast.
-- Homepage with one tool card.
-- Solder Joint Checker (`tools/solder-checker/`): upload or take a photo of a joint; get a verdict (Good / Needs work / Bad), the likely problem, fix steps, and how sure the tool is.
-- Photo analysis by an AI image service through one small server function (`functions/api/analyse.js`), hosted on Cloudflare Pages. The API key is kept in Cloudflare's settings, never in the code. A daily limit caps cost.
-- Built and tested first with a stand-in result; the real AI is switched on once the accounts and key exist.
+- [x] Shared base: layout, styles, light/dark toggle (light by default), readable contrast.
+- [x] Homepage with one tool card.
+- [x] Solder Joint Checker (`tools/solder-checker/`), kept simple: add a photo of a joint; get "Looks good" or "Needs work" with a one-line reason. Currently shows a labelled demo result.
+- [ ] Real photo analysis by an AI image service through one small server function (`functions/api/analyse.js`), hosted on Cloudflare Pages. The API key is kept in Cloudflare's settings, never in the code. A daily limit caps cost.
+  The real AI is switched on once the accounts and key exist.
 - Note: the server function needs the Tech Stack rules above to be updated first.
 
 ### Phase 2 and later

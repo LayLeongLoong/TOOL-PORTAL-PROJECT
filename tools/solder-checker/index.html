@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solder Joint Checker</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="../../index.html">Electronics Tool Portal</a>
+      <button id="theme-toggle" type="button">Dark theme</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../../index.html">&larr; Back to all tools</a>
+    <h1>Solder Joint Checker</h1>
+    <p class="muted">Add a photo of one solder joint to check if it looks good.
+      For best results, take it close up, in good light and in focus.</p>
+
+    <div class="panel">
+      <label for="photo"><strong>Photo of the joint</strong></label><br>
+      <input id="photo" type="file" accept="image/*">
+      <img id="preview" class="preview" alt="Your photo of the solder joint" hidden>
+      <p><button id="check" type="button" disabled>Check joint</button></p>
+    </div>
+
+    <div id="result" class="panel" aria-live="polite" hidden>
+      <p id="verdict" class="result-verdict"></p>
+      <p id="reason"></p>
+      <p class="demo-note">Demo: this is an example result, not a real check of your photo.
+        Real photo checking will be added later.</p>
+    </div>
+  </main>
+
+  <script src="checker.js"></script>
+</body>
+</html>
